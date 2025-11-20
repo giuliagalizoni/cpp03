@@ -1,4 +1,7 @@
 .vscode
 .clang-format
+.DS_Store
+
 obj
 claptrap
+
