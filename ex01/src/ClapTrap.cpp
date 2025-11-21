@@ -2,14 +2,14 @@
 
 #include <iostream>
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _name("default")
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Constructor for " << _name << " called" << std::endl;
+	std::cout << "ClapTrap constructor for " << _name << " called" << std::endl;
 }
 ClapTrap::ClapTrap(const ClapTrap &src)
 	: _name(src._name),
@@ -17,11 +17,11 @@ ClapTrap::ClapTrap(const ClapTrap &src)
 	  _energyPoints(src._energyPoints),
 	  _attackDamage(src._attackDamage)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if (this != &src)
 	{
 		this->_name = src._name;
@@ -34,7 +34,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called for " << _name << std::endl;
+	std::cout << "ClapTrap destructor called for " << _name << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -45,10 +45,10 @@ void ClapTrap::attack(const std::string &target)
 				  << _attackDamage << " points of damage." << std::endl;
 		_energyPoints--;
 	}
-	if (_energyPoints == 0)
+	else if (_energyPoints == 0)
 		std::cout << _name << " tries to attack " << target
 				  << " but have no energy left." << std::endl;
-	if (_hitPoints == 0)
+	else if (_hitPoints == 0)
 		std::cout << _name << " tries to attack " << target
 				  << " but have no hit points left." << std::endl;
 }
@@ -78,11 +78,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 		_hitPoints = _hitPoints + amount;
 		_energyPoints--;
 	}
-	if (_energyPoints == 0)
-		std::cout << _name
-				  << " tries to attack be repaired but have no energy left."
+	else if (_energyPoints == 0)
+		std::cout << _name << " tries to be repaired but have no energy left."
 				  << std::endl;
-	if (_hitPoints == 0)
+	else if (_hitPoints == 0)
 		std::cout << _name
 				  << " tries to be repaired but have no hit points left."
 				  << std::endl;
