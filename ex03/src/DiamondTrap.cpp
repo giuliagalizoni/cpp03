@@ -6,12 +6,12 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name)
+DiamondTrap::DiamondTrap(std::string name)
+	: ClapTrap(name + "_clap_name"), _name(name)
 {
-	this->_hitPoints = FlagTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FlagTrap::_attackDamage;
-	this->ClapTrap::_name = _name.append("_clap_name");
+	_hitPoints = FlagTrap::_hitPoints;
+	_energyPoints = ScavTrap::_energyPoints;
+	_attackDamage = FlagTrap::_attackDamage;
 	std::cout << "DiamondTrap constructor for " << _name << " called"
 			  << std::endl;
 }
@@ -39,6 +39,6 @@ void DiamondTrap::attack(const std::string &target)
 }
 void DiamondTrap::whoAmI()
 {
-	std::cout << "I am " << this->_name << std::endl;
-	std::cout << "or am I " << ClapTrap::_name << "? ..." << std::endl;
+	std::cout << "I am " << this->_name << ". Or am I " << ClapTrap::_name
+			  << "? ..." << std::endl;
 }
