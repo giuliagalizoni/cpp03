@@ -79,8 +79,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		_energyPoints--;
 	}
 	else if (_energyPoints == 0)
-		std::cout << _name
-				  << " tries to attack be repaired but have no energy left."
+		std::cout << _name << " tries to be repaired but have no energy left."
 				  << std::endl;
 	else if (_hitPoints == 0)
 		std::cout << _name
