@@ -45,10 +45,10 @@ void ClapTrap::attack(const std::string &target)
 				  << _attackDamage << " points of damage." << std::endl;
 		_energyPoints--;
 	}
-	if (_energyPoints == 0)
+	else if (_energyPoints == 0)
 		std::cout << _name << " tries to attack " << target
 				  << " but have no energy left." << std::endl;
-	if (_hitPoints == 0)
+	else if (_hitPoints == 0)
 		std::cout << _name << " tries to attack " << target
 				  << " but have no hit points left." << std::endl;
 }
@@ -78,11 +78,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 		_hitPoints = _hitPoints + amount;
 		_energyPoints--;
 	}
-	if (_energyPoints == 0)
+	else if (_energyPoints == 0)
 		std::cout << _name
 				  << " tries to attack be repaired but have no energy left."
 				  << std::endl;
-	if (_hitPoints == 0)
+	else if (_hitPoints == 0)
 		std::cout << _name
 				  << " tries to be repaired but have no hit points left."
 				  << std::endl;
