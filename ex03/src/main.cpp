@@ -1,8 +1,10 @@
 #include <iostream>
 
-#include "../include/FlagTrap.hpp"
-#include "../include/ScavTrap.hpp"
+#include "../include/DiamondTrap.hpp"
 
 int main()
 {
+	DiamondTrap diamond("Monster");
+
+	diamond.whoAmI();
 }

@@ -1,5 +1,5 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -Wshadow -Who-Shadow -std=c++98 -Iincludes
+CXXFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow  -std=c++98 -Iincludes
 NAME = diamond
 
 SRC_DIR = src
